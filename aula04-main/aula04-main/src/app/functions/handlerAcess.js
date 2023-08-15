@@ -3,7 +3,7 @@ import { validateToken } from "./validateToken";
 import { getUserAuthenticated } from "./handlerAcessAPI";
 
 const handlerAcessUser = async (user) => {
-
+  
     const userAuth = await getUserAuthenticated(user);
     
     const isTokenValidate = validateToken(userAuth.token);
