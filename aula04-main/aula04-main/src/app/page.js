@@ -14,10 +14,13 @@ export default function Login() {
   const handlerLogin = async (e) => {
     e.preventDefault();
     try {
-      await handlerAcessUser(user);
+   const userAuth =    await handlerAcessUser(user);
+      if(userAuth.token === undefined){
+        toast.error("Erro no e-mail ou senha");
+      }
       push('/pages/dashboard');
     } catch {
-      refresh();
+    toast.error("Erro na aplicação")
     }
   }
   return (
@@ -35,6 +38,7 @@ export default function Login() {
           onChange={(e) => { setUser({ ...user, password: e.target.value }) }}>
         </input>
         <button>Entrar</button>
+      <ToastContainer/>
       </form>
     </div>
   )
