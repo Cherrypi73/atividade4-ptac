@@ -1,5 +1,4 @@
-
-
+import './global.css'
 export const metadata = {
   title: 'Register users',
   description: 'Project for class PTAC',
@@ -12,3 +11,4 @@ export default function RootLayout({ children }) {
     </html>
   )
 }
+
