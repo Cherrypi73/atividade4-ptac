@@ -25,25 +25,32 @@ export default function Login() {
     }
   }
   return (
-    <div  className="grid grid-rows-4 grid-flow-col gap-4">
-      <h1>Login</h1>
+    <body className="bg-rose-100">
+    <div  className="flex   items-center justify-center  italic ">
+   <div className="bg-white p-5 text-gray-700 w-72 min-h-[10rem] mt-10 shadow-lg  ">
+    <div className=" center text-xl p-3"> <h1>Login</h1></div>
       <form onSubmit={handlerLogin}>
-        <input
+    <div className="center p-3 ">   
+    <label className="p-1"> Email:</label>
+     <input
           placeholder='E-mail'
           type="email"
-          className="border border-neutral-400 rounded-lg"
+          className="border border-neutral-400 rounded-lg p-3 "
           onChange={(e) => { setUser({ ...user, email: e.target.value }) }}>
-        </input>
-        <input
+        </input></div>  
+    <div className="p-3 center">
+    <label className="p-1"> Senha:</label>
+       <input
           placeholder='Senha'
           type='password'
-          className="border border-neutral-400 rounded-lg"
+          className="border border-neutral-400 rounded-lg p-3 "
           onChange={(e) => { setUser({ ...user, password: e.target.value }) }}>
-        </input>
-        <button className="bg-rose-400 rounded p-2">Entrar</button>
-      
+        </input></div>    
+      <div className="center p-2  "> <button className="bg-rose-400 rounded shadow-lg p-2 hover:bg-rose-500 ">Entrar</button>
+      </div> 
       <ToastContainer/>
       </form>
     </div>
+    </div></body>
   )
 }
