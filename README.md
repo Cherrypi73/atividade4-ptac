@@ -1,4 +1,5 @@
 # atividade4-ptac
  <p> Login interface </p>
- < src="https://github.com/Cherrypi73/atividade4-ptac/assets/90846606/baf35a8d-ee6c-4b34-995c-3c0f5289ccb1"/>
+ ![image](https://github.com/Cherrypi73/atividade4-ptac/assets/90846606/aca7c8c7-2286-4da9-9c5e-92a4bea93b27)
+
 
