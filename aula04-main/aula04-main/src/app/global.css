@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 .center{
     text-align: center;
+}
+.icon{
+    margin-left: 100px;
+    height: 50px;
 }

@@ -28,9 +28,16 @@ export default function Login() {
     <body className="bg-rose-100">
     <div  className="flex   items-center justify-center  italic ">
    <div className="bg-white p-5 text-gray-700 w-72 min-h-[10rem] mt-10 shadow-lg  ">
-    <div className=" center text-xl p-3"> <h1>Login</h1></div>
+   <div>
+    <div > <img class="icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzNjM2MzYiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS11c2VyLTIiPjxjaXJjbGUgY3g9IjEyIiBjeT0iOCIgcj0iNSIvPjxwYXRoIGQ9Ik0yMCAyMWE4IDggMCAxIDAtMTYgMCIvPjwvc3ZnPg=="/> </div>
+   </div>
+
+    <div className=" center text-xl p-3">
+   
+       <h1>Login</h1></div>
       <form onSubmit={handlerLogin}>
     <div className="center p-3 ">   
+    
     <label className="p-1"> Email:</label>
      <input
           placeholder='E-mail'
