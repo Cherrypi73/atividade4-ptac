@@ -1,6 +1,6 @@
 # atividade4-ptac
  <h1>interface</h1>
 <div align="center">
-<img src="https://drive.google.com/file/d/1p4ZNtR6y6Og-MQOpfy7b0-m6TCy-aD2_/view?usp=drive_link" width="700px" />
+<img src="https://github.com/Cherrypi73/atividade4-ptac/assets/90846606/a79832c3-dd07-4d05-850a-1e29d2b56090" />
 </div>
 
