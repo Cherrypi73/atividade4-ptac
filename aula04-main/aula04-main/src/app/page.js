@@ -25,9 +25,9 @@ export default function Login() {
     }
   }
   return (
-    <body className="bg-rose-100">
+    <body className="bg-gray-200">
     <div  className="flex   items-center justify-center  italic ">
-   <div className="bg-white p-5 text-gray-700 w-72 min-h-[10rem] mt-10 shadow-lg  ">
+   <div className="bg-white p-5 text-gray-700 w-72 min-h-[10rem] mt-10 shadow-lg mt-6  ">
    <div>
     <div > <img class="icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzNjM2MzYiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS11c2VyLTIiPjxjaXJjbGUgY3g9IjEyIiBjeT0iOCIgcj0iNSIvPjxwYXRoIGQ9Ik0yMCAyMWE4IDggMCAxIDAtMTYgMCIvPjwvc3ZnPg=="/> </div>
    </div>
@@ -53,7 +53,7 @@ export default function Login() {
           className="border border-neutral-400 rounded-lg p-3 "
           onChange={(e) => { setUser({ ...user, password: e.target.value }) }}>
         </input></div>    
-      <div className="center p-2  "> <button className="bg-rose-400 rounded shadow-lg p-2 hover:bg-rose-500 ">Entrar</button>
+      <div className="center p-2  "> <button className="bg-emerald-400 rounded shadow-lg p-2 hover:bg-emerald-500 ">Entrar</button>
       </div> 
       <ToastContainer/>
       </form>
