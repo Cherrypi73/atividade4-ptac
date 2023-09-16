@@ -25,7 +25,7 @@ export default function Login() {
     }
   }
   return (
-    <body className="bg-gray-200 ">
+    <body className="bg-gray-300 ">
     <div  className="flex   items-center justify-center  italic   ">
    <div className="bg-white p-5 rounded-lg text-gray-700 w-72 min-h-[10rem] mt-10 shadow-lg mt-6  ">
    <div>
@@ -53,7 +53,7 @@ export default function Login() {
           className="border border-neutral-400 rounded-lg p-3 "
           onChange={(e) => { setUser({ ...user, password: e.target.value }) }}>
         </input></div>    
-      <div className="center p-2  "> <button className="bg-cyan-300 rounded shadow-lg p-2 hover:bg-teal-500 ">Entrar</button>
+      <div className="center p-2  "> <button className="bg-cyan-500 hover:bg-teal-500 rounded shadow-lg p-1 text-xl p-2 ">Entrar</button>
       </div> 
       <ToastContainer/>
       </form>
