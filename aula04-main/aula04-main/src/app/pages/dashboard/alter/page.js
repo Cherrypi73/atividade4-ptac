@@ -1,24 +1,39 @@
-import { getUsers } from "@/app/functions/handlerAcessAPI";
+'use client'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-export default async function Alter() {
-   const  item = getUsers();
-    return (
-        <body className="bg-gray-200 w-72 center italic container">
-        <div className="bg-zinc-50  shadow-lg">
-            <h1>Usuário</h1>
-           
-            {item.map(item => {
-                return( 
-                    <div>
-                    <div > <img className="icon-dashboard" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXVzZXItMiI+PGNpcmNsZSBjeD0iMTIiIGN5PSI4IiByPSI1Ii8+PHBhdGggZD0iTTIwIDIxYTggOCAwIDEgMC0xNiAwIi8+PC9zdmc+"/> </div>
-               <div> <p>{item.nome}</p>
-                <p>{item.email} </p> 
-                </div>
-                </div>
-             )
-            }
-               
-                )}
-        </div></body>
-    );
+const Formulario = () => {
+
+  const handlerLogin = async (e) => {
+    e.preventDefault();
+    toast.success('alterado com sucesso')
+  }
+  return (
+    <div>
+      <h1>Login</h1>
+      <form onSubmit={handlerLogin}>
+
+      <input
+          placeholder='nome'
+          type="nome" >
+        </input>
+        <input
+    
+          placeholder='E-mail'
+          type="email">
+        </input>
+
+        <input
+          placeholder='Senha'
+          type='password'
+        >
+        </input>
+        <button>Entrar</button>
+        <button><a href="/pages/dashboard">Voltar</a></button>
+      </form>
+      <ToastContainer/>
+    </div>
+  )
 };
+
+export default Formulario;
