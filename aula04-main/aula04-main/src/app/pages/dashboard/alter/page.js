@@ -7,7 +7,7 @@ const Formulario = () => {
 
   const handlerLogin = async (e) => {
     e.preventDefault();
-    toast.success('Registrado com sucesso')
+    toast.success('Alterado com sucesso')
   }
   return (
     <body className="bg-gray-200 ">
