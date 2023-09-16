@@ -10,7 +10,7 @@ export  default function  Button(){
     }
     return (
         <div>
-             <button onClick={logout}> Sair</button>
+             <button onClick={logout}> Logout</button>
         </div>
     )
 }
