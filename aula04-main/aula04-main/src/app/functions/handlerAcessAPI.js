@@ -1,4 +1,22 @@
 'use server'
+const url ="https://trabalho-ptac4-mb3d.vercel.app/";
+const getUserAuthenticated = async (user) => {// user vem do login -- comunicação do servidor 
+  const responseOfApi = await fetch(url + "/user/authenticate",
+  {
+    method: "POST", 
+    headers: {"Content-Type": "application/json"},
+    body:  JSON.stringify(user)
+  }
+  );
+}
+
+const getUsers  = async ( ) ={ 
+
+}
+
+
+
+/*/'use server'
     const users =[ 
         {nome:"maria",
         email:"usuario@gmail.com",
@@ -29,4 +47,4 @@ const getUserAuthenticated = (user) => {
 const getUsers = () =>{
         return users 
 }
-export { getUsers, getUserAuthenticated };
+export { getUsers, getUserAuthenticated };/*/
