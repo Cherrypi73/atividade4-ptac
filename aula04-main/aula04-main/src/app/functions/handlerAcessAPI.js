@@ -8,6 +8,8 @@ const getUserAuthenticated = async (user) => {// user vem do login -- comunicaç
     body:  JSON.stringify(user)
   }
   );
+  const userAuth = await responseOfApi.json(); 
+  return userAuth;
 }
 
 const getUsers  = async ( ) ={ 
