@@ -10,10 +10,10 @@ export default function Login() {
     email: '',
     password: '',
   });
-  const { push} = useRouter(); */ ponto de conexão entre as paginas
+  const { push} = useRouter(); 
 
   const handlerLogin = async (e) => {
-    e.preventDefault();*/Cancela o evento se for cancelável, sem parar a propagação do mesmo*/
+    e.preventDefault();
     try {
       const userAuth = await handlerAcessUser(user);
       if(userAuth.token === undefined){
