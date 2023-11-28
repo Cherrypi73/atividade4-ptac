@@ -1,6 +1,7 @@
 import { getUsers } from "@/app/functions/handlerAcessAPI";
 import Nav from '../../../componentes/nav'
 import { Suspense } from "react";
+import Link from "next/link";
 export default async function Dashboard() {
    const  item = await getUsers();
     return (
@@ -25,6 +26,7 @@ export default async function Dashboard() {
                <div> <p>{item.nome}</p>
                 <p>{item.email} </p> 
                 </div>
+                <Link href={`dashboard/alter/${item.id}`}>link</Link>
                 </div>
              )
             }

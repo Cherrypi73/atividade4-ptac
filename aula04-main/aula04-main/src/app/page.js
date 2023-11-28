@@ -1,15 +1,21 @@
 'use client'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import handlerAcessUser from "./functions/handlerAcess"
 import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-
+import Link from "next/link"; 
 export default function Login() {
   const [user, setUser] = useState({
     email: '',
     password: '',
   });
+  const{push} = useRouter();
+  useEffect(()=>{
+    const findUser = async () =>{
+      const
+    }
+  })
   const { push} = useRouter(); 
 
   const handlerLogin = async (e) => {
@@ -57,6 +63,7 @@ export default function Login() {
       </div> 
       <ToastContainer/>
       </form>
+   
     </div>
     </div></body>
   )

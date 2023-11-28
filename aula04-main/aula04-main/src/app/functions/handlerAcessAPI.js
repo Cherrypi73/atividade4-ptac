@@ -17,6 +17,24 @@ const getUsers  = async (user ) =>{
   const lista = await responseOfApi.json();
   return lista
 }
+const updateUser = async (user,id)=>{
+try{
+  const responseOfApi = await fetch(url+ "/user/" +id,
+  {
+    method : "PUT",
+    cache: "no-cache",
+    headers:{
+      "Content-Type":"application/json"
+    }, body:JSON.stringify(user)
+  }
+  )
+  const userUpdate = await responseOfApi.json();
+  return userUpdate;
+ } catch{
+    return null
+  }
+}
+
 const postUser = async (user) =>{
   try{
     const responseOfApi = await fetch(url + "/user",
@@ -33,7 +51,7 @@ const postUser = async (user) =>{
   }
 
 }
-export{getUsers,getUserAuthenticated, postUser}
+export{getUsers,getUserAuthenticated, postUser,updateUser}
 
 
 /*/'use server'

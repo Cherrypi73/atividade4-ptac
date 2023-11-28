@@ -1,7 +1,7 @@
 'use client'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Nav from '../../../../componentes/nav'
+import Nav from '../../../../../componentes/nav'
 
 const Formulario = () => {
 
@@ -26,10 +26,13 @@ const Formulario = () => {
       <div className='p-2'> <input   placeholder='Senha'    className="border border-neutral-400 rounded-lg p-3 "  type='password'required />
 </div> 
 <div> <button className='bg-cyan-500 hover:bg-teal-500 rounded shadow-lg p-1 text-xl p-2'>Alterar</button></div>
-     </div> </form>
+     </div>
+     
+      </form>
       <ToastContainer/>
     </div>
-    </div></div> </body>
+    </div></div> 
+    </body>
   )
 };
 
