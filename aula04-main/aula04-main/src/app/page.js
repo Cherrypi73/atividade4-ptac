@@ -10,12 +10,7 @@ export default function Login() {
     email: '',
     password: '',
   });
-  const{push} = useRouter();
-  useEffect(()=>{
-    const findUser = async () =>{
-      const
-    }
-  })
+
   const { push} = useRouter(); 
 
   const handlerLogin = async (e) => {
@@ -59,7 +54,8 @@ export default function Login() {
           className="border border-neutral-400 rounded-lg p-3 "
           onChange={(e) => { setUser({ ...user, password: e.target.value }) }}>
         </input></div>    
-      <div className="center p-2  "> <button className="bg-cyan-500 hover:bg-teal-500 rounded shadow-lg p-1 text-xl p-2 ">Entrar</button>
+      <div className="center p-2  "> <button className="bg-cyan-500 hover:bg-teal-500 rounded shadow-lg p-1 text-xl p-2 ">Entrar</button><pre> </pre>
+      <div className="p-2">  <Link href={'page'} className="bg-cyan-500 hover:bg-teal-500 rounded shadow-lg p-1 text-xl p-2 ">Recuperar Acesso</Link></div>
       </div> 
       <ToastContainer/>
       </form>
