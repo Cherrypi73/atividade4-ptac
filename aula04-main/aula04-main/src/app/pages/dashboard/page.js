@@ -26,7 +26,7 @@ export default async function Dashboard() {
                <div> <p>{item.nome}</p>
                 <p>{item.email} </p> 
                 </div>
-                <Link href={`dashboard/alter/${item.id}`}>link</Link>
+                <Link href={`dashboard/alter/${item.id}`}>Alterar</Link>
                 </div>
              )
             }

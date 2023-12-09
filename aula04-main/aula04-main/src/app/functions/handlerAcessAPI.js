@@ -10,20 +10,40 @@ const getUserAuthenticated = async (user) => {// user vem do login -- comunicaç
   );
   const userAuth = await responseOfApi.json(); 
   return userAuth;
-}
+};
 
-const getUsers  = async (user ) =>{ 
-  const responseOfApi = await fetch(url+ "/users",{cache:"no-cache"})
-  const lista = await responseOfApi.json();
-  return lista
+const getUsers = async() => {
+  const responseOfApi = await fetch(url + '/users', {
+      method: "GET",
+      next: {revalidate: 1},
+      headers: {"Content-Type": "application/json"}
+  })
+ const users = await responseOfApi.json();
+ return users;
+}
+const getUserbyid = async (id) =>{
+  try{
+    const responseOfApi = await fetch(`${url}´/user/${id}`, {
+     method: "GET",
+     cache: "no-cache",
+     headers: {
+         "Content-Type": "application/json"
+        },
+     
+});
+ const lista = await responseOfApi.json();
+ return lista;
+  } catch {
+    return null
+  }
+ 
 }
 const updateUser = async (user,id)=>{
 try{
   const responseOfApi = await fetch(url+ "/user/" +id,
   {
     method : "PUT",
-    cache: "no-cache",
-    headers:{
+  headers:{
       "Content-Type":"application/json"
     }, body:JSON.stringify(user)
   }
@@ -40,7 +60,7 @@ const postUser = async (user) =>{
     const responseOfApi = await fetch(url + "/user",
    {
                 method: "POST",
-                cache: "no-cache",
+      
                 headers:{"Content-Type":"application/json"},
                 body: JSON.stringify(user)
    } );
@@ -51,7 +71,7 @@ const postUser = async (user) =>{
   }
 
 }
-export{getUsers,getUserAuthenticated, postUser,updateUser}
+export{getUsers,getUserAuthenticated, postUser,updateUser,getUserbyid}
 
 
 /*/'use server'

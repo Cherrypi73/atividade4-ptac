@@ -1,41 +1,74 @@
 'use client'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast} from "react-toastify";
+import { useEffect, useState } from "react";
 import 'react-toastify/dist/ReactToastify.css';
-import Nav from '../../../../../componentes/nav'
+import { updateUser, getUserbyid } from "@/app/functions/handlerAcessAPI";
+import { useRouter } from "next/navigation";
+import Link from "next/link"
+export default function Alter( {params} ){
+  const [user, setUser] = useState({
+    name: '',
+    email: '',
+    password: '',
+  });
 
-const Formulario = () => {
+  const { push } = useRouter();
 
-  const handlerLogin = async (e) => {
+  useEffect(() =>{
+    const findUser = async () => {
+      const userFind = await  getUserbyid(params.id);
+      setUser({ ...user })
+    }
+    findUser()
+  }, [])
+
+  const handlerAlter = async (e) => {
     e.preventDefault();
-    toast.success('Alterado com sucesso')
-  }
-  return (
+    toast.success('Alterado com Sucesso!')
+    await updateUser(user, params.id);//pega o usuario e o id dele
+    return push("/pages/dashboard");
+  } 
+  return(
     <body className="bg-gray-200 ">
-   <Nav />  <div  className="flex   items-center justify-center  italic   ">
+   <div  className="flex   items-center justify-center  italic   ">
+    <div className='grid grid-rows-1  '>
+    <div className="bg-white p-5 rounded-lg text-gray-700 w-72 min-h-[10rem] mt-10 shadow-lg mt-6  ">
+    <center><br/>
+    </center>
+     <form onSubmit={handlerAlter}>
+    <center><h1 className="text-2xl ">Alterar Usuário</h1><br/></center>
+        <center>
+    <input
+       className="border border-neutral-400 rounded-lg p-3 "
+        value={user.name}
+        placeholder="Nome"
+        type="name"
+        onChange={(e) => { setUser({ ...user, name: e.target.value }) }}>
+      </input></center><pre> </pre>
+      <center>
+      <input
+       className="border border-neutral-400 rounded-lg p-3 "
+        value={user.email}
+        type="email"
+        placeholder="Email"
+        onChange={(e) => { setUser({ ...user, email: e.target.value }) }}>
+      </input></center><pre> </pre>
+      <center>
+      <input className="border border-neutral-400 rounded-lg p-3 "   value={user.password}
+        type='password'
+        placeholder="Password"
+        onChange={(e) => { setUser({ ...user, password: e.target.value }) }}>
+      </input></center><pre> </pre>
+      <div className="grid grid-cols-2">
+        <div className=" p-3">
+      <button  className='bg-cyan-500 hover:bg-teal-500 rounded shadow-lg p-1 text-xl'>Alterar
+      </button></div>
+      <div className=" p-3">
+      <div className='bg-cyan-500 hover:bg-teal-500 rounded shadow-lg p-1 text-xl'>  <Link href={`/`}>Voltar</Link></div>
+      </div></div>
     
-     <div className='grid grid-rows-1  '>
-     <div className="bg-white p-5 rounded-lg text-gray-700 w-72 min-h-[10rem] mt-10 shadow-lg mt-6  ">
-   <div className='center'>   <h1 className=' text-xl p-2'>Alterar</h1></div>
-   <div > <img class="icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM1MDRlNGUiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS11c2VyLXBsdXMiPjxwYXRoIGQ9Ik0xNiAyMXYtMmE0IDQgMCAwIDAtNC00SDZhNCA0IDAgMCAwLTQgNHYyIi8+PGNpcmNsZSBjeD0iOSIgY3k9IjciIHI9IjQiLz48bGluZSB4MT0iMTkiIHgyPSIxOSIgeTE9IjgiIHkyPSIxNCIvPjxsaW5lIHgxPSIyMiIgeDI9IjE2IiB5MT0iMTEiIHkyPSIxMSIvPjwvc3ZnPg=="/> </div>
-      <form onSubmit={handlerLogin} >
- <div className='center' >
-    <div className='p-2'>  <input placeholder='nome'   className="border border-neutral-400 rounded-lg p-3 " type="nome" required/></div>
-      <div className='p-2'>  <input  placeholder='E-mail'   className="border border-neutral-400 rounded-lg p-3 "   type="email"required/> 
-      </div>
-
-      <div className='p-2'> <input   placeholder='Senha'    className="border border-neutral-400 rounded-lg p-3 "  type='password'required />
-</div> 
-<div> <button className='bg-cyan-500 hover:bg-teal-500 rounded shadow-lg p-1 text-xl p-2'>Alterar</button></div>
-     </div>
-     
-      </form>
-      <ToastContainer/>
-    </div>
-    </div></div> 
-    </body>
-  )
-};
-
-export default Formulario;
-
-
+    </form>
+    <ToastContainer/>
+    </div>  </div></div></body>
+    )
+}
