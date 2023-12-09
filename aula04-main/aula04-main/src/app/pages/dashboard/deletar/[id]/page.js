@@ -24,7 +24,7 @@ export default function Alter( {params} ){
 
   const handlerAlter = async (e) => {
     e.preventDefault();
-    toast.success('Alterado com Sucesso!')
+    toast.success('Deletado com Sucesso!')
     await deleteUser(user, params.id);//pega o usuario e o id dele
     return push("/pages/dashboard");
   } 
