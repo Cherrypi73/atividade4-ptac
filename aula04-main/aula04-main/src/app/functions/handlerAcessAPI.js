@@ -54,14 +54,28 @@ try{
     return null
   }
 }
-
+const deleteUser = async (user,id)=>{
+  try{
+    const responseOfApi = await fetch(url+ "/user/" +id,
+    {
+      method : "DELETE",
+    headers:{
+        "Content-Type":"application/json"
+      }, body:JSON.stringify(user)
+    }
+    )
+    const userdelete = await responseOfApi.json();
+    return userdelete;
+   } catch{
+      return null
+    }
+  }
 const postUser = async (user) =>{
   try{
     const responseOfApi = await fetch(url + "/user",
    {
                 method: "POST",
-      
-                headers:{"Content-Type":"application/json"},
+          headers:{"Content-Type":"application/json"},
                 body: JSON.stringify(user)
    } );
    const userSave = await responseOfApi.json();
@@ -71,7 +85,8 @@ const postUser = async (user) =>{
   }
 
 }
-export{getUsers,getUserAuthenticated, postUser,updateUser,getUserbyid}
+
+export{getUsers,getUserAuthenticated, postUser,updateUser,getUserbyid,deleteUser}
 
 
 /*/'use server'
